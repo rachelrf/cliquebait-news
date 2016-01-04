@@ -13,7 +13,11 @@ module.exports = {
         if (err) {
             console.log(err);
         }
-        var newUrl = results.data.ogImage.url || 'http://wac.450f.edgecastcdn.net/80450F/hudsonvalleycountry.com/files/2015/01/cat4.jpg';
+        var newUrlPath = results.data.ogImage;
+        var newUrl = 'http://wac.450f.edgecastcdn.net/80450F/hudsonvalleycountry.com/files/2015/01/cat4.jpg';
+        if (newUrlPath) {
+          newUrl = results.data.ogImage.url;
+        }
         
         res.redirect(newUrl);
     });

@@ -8,7 +8,9 @@
     <div ng-repeat="story in data.stories">
     	<a ng-href = {{story.Url}} target="_blank">
 
-        <<!-- img src='http://www.joomlaworks.net/images/demos/galleries/abstract/7.jpg'> -->
+        
+        <!-- <div class='displayImg' background-image=url("/api/getImage?site={{story.Url}}")>
+        </div> -->
         <img ng-src="/api/getImage?site={{story.Url}}"/>
         <h3>{{story.Title}}</h3>
         <h6>{{story.Source}}</h6>
