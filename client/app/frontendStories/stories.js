@@ -5,7 +5,6 @@ angular.module('pique.stories', []).filter('trustAsResourceUrl', ['$sce', functi
 }]).controller('StoriesController', function ($scope, Stories, $window, $location) {
   $scope.data = [];
   $scope.getStories = function () {
-
     Stories.getStories($scope.input)
     .then(function (data) {
       console.log(data);

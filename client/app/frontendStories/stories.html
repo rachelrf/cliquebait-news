@@ -9,7 +9,7 @@
     	<a ng-href = {{story.Url}} target="_blank">
 
         <<!-- img src='http://www.joomlaworks.net/images/demos/galleries/abstract/7.jpg'> -->
-        <img ng-src="http://localhost:3000/getImage/{{story.Url}}"/>
+        <img ng-src="/api/getImage?site={{story.Url}}"/>
         <h3>{{story.Title}}</h3>
         <h6>{{story.Source}}</h6>
         <!--    <iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" src={{trustSrc(story.Url)}}></iframe> -->

@@ -1,4 +1,3 @@
-var Topic = require('./topicModel.js');
 Q = require('q');
 util = require('../config/utils.js');
 google = require('google');

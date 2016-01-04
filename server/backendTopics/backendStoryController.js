@@ -1,4 +1,3 @@
-var util = require('../config/utils.js');
 var google = require('google');
 var Bing = require('node-bing-api')({ accKey: "yc1qnJqokiEdeGaDnw98TrJ99KwLDz/3SF1Xsk4gGPA" });
 var async = require('async');
