@@ -18,27 +18,36 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  Pique.
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  Pick the stories that pique your interest.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+   Pique filters the news for readers who care more about topics than sources. 
 
 ## Problem ##
   > Describe the problem your product solves.
+  In order to read the recent news on a specific topic (say "Mars Rover" or "Kim Kardashian"), readers must either independently go to many different news sites and filter through the content to find relevant articles, or use a search engine and end up with too many open tabs and not enough information. 
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  With Pique, readers can simply enter a topic of interest and see list of relevant news articles. With a Pique account, readers can store multiple topics of interest for a completely individualized news experience, and look at Trending Topics to see what other Pique users are interested in.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  TODO
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  TODO
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  TODO
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  TODO
