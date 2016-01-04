@@ -1,6 +1,7 @@
 var backendTopicController = require('../backendTopics/backendTopicController.js');
 var userController = require('../users/userController.js');
 var backendStoryController = require('../backendTopics/backendStoryController.js');
+var backendOGImageController = require('../backendTopics/backendOGImageController.js');
 var helpers = require('./helpers.js'); // our custom middleware
 
 module.exports = function (app, express) {
@@ -11,7 +12,7 @@ module.exports = function (app, express) {
   // app.get('/api/url', backendTopicController.allUrls);
   app.post('/api/topic', backendTopicController.newTopic);
   app.get('/api/story', backendStoryController.fetchStories);
-  // app.get('/api/getImage', backendOGImageController.fetchOGImage);
+  app.get('/api/getImage', backendOGImageController.fetchOGImages);
 
 
   // TODO: Add image redirector using:

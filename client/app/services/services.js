@@ -23,24 +23,25 @@ angular.module('pique.services', []).factory('Stories', function ($http) {
     .then(function (resp) {
       return resp.data;
     });
-  }
-
-  return {
-    
-    addNewTopic: addNewTopic,
-    getStories: getStories
   };
 
   // var getOGImages = function (userInput) {
-    
-  //   // return $http({
-  //   //   method: 'GET',
-  //   //   url: '/api/getImage?site=' + userInput
-  //   // })
-  //   // .then(function (resp) {
-  //   //   return resp.data;
-  //   // });
-  // }
+  //   console.log('fetching OG images via GET request');
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/api/getImage?site=' + userInput
+  //   })
+  //   .then(function (resp) {
+  //     return resp.data;
+  //   });
+  // };
+
+  return { 
+    addNewTopic: addNewTopic,
+    getStories: getStories,
+    // getOGImages: getOGImages
+  };
+
 
 
 })
