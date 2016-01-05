@@ -13,11 +13,12 @@
         </div> -->
         <img class='displayImg' ng-src="/api/getImage?site={{story.Url}}"/>
         
-        <span>
-            <h3>{{story.Title}}</h3>
+      
+        <h3> 
             <img class='heart' ng-src='http://icons.iconarchive.com/icons/graphicloads/100-flat/256/heart-favourite-icon.png'>
-        </span>
-        <div><h6>{{story.Source}}</h6></div>
+            {{story.Title}}
+        </h3>
+        <h6>{{story.Source}}</h6>
         <!--    <iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" src={{trustSrc(story.Url)}}></iframe> -->
         
     	</a>
