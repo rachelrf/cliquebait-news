@@ -9,7 +9,7 @@ module.exports = {
     //   return stuff;
     // } else {
 
-    // var sites = ' site:huffingtonpost.com OR site:cnn.com OR site:foxnews.com OR site:nbc.com OR site:nytimes.com OR site:www.washingtonpost.com OR site:theguardian.com/us OR site:economist.com OR site:gawker.com';
+    
     var topic = req.query.topic; 
     var results = [];
 
@@ -20,26 +20,6 @@ module.exports = {
       res.json(results['d']['results']);
     });
 
-    // var searchBing = function(topic, site, callback) {
-    //   Bing.news(topic, {
-    //   top: 5,  
-    //   }, callback);
-    // };
-
-    // var searchFuncs = sites.map(function(item) {
-    //   return searchBing.bind(null, topic, item, function(err, result) {
-    //     if (err) {
-    //       console.log(err)
-    //     } else {
-    //       console.log('search successful!');
-    //     }
-    //   });
-    // });
-
-    // async.parallel(searchFuncs, function(err, results) {
-    //   console.log(results);
-    //   res.json(results);
-    // });
   }
 
 };
