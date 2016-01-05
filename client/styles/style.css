@@ -33,10 +33,25 @@ a.story {
 
 a.story:hover { transform: scale(1.025); }
 
+.description {
+  opacity: 0;
+  background-color: rgba(0,0,0,0.6);
+  padding: 4px;
+  border-radius: 5px;
+  text-shadow: none;
+  transition: opacity .4s ease-in-out;
+}
+
+a.story:hover > .description {
+  opacity: 1;
+}
+
 .outline {
   text-shadow: 0px 0px 4px #000;
   
 }
+
+
 
 body {
   margin: 0;
