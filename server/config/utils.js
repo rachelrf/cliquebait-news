@@ -18,6 +18,20 @@ var utils = {
     return resultsArray.map(function(item) {
       return item.MediaUrl
     });
+  },
+
+  cleanTopic: function(str) {
+    return str.toLowerCase().replace(/\s\s+/g, ' ');
+  },
+
+  incrementCountTopic: function(name) {
+
+
+  },
+
+  incrementCountStory: function(url) {
+
+
   }
 }
 

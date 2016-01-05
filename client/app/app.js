@@ -11,11 +11,11 @@ angular.module('pique', [
       controller: 'StoriesController',
       
     })
-    // .when('/home', {
-    //   templateUrl: 'app/frontendStories/stories.html',
-    //   controller: 'StoriesController',
+    .when('/home', {
+      templateUrl: 'app/frontendStories/stories.html',
+      controller: 'StoriesController',
       
-    // })
+    })
  
     .otherwise( {
       templateUrl: 'app/frontendStories/stories.html',

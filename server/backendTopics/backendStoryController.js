@@ -14,7 +14,7 @@ module.exports = {
     // Build topic query
     //---------------------
     var topic = req.query.topic;
-    topic = topic.toLowerCase();
+    topic = utils.cleanTopic(topic);
 
     cache.findStoriesForTopic(topic, function(err, stories) {
       if (err) {
