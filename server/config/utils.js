@@ -1,3 +1,4 @@
+var Story = require('../backendTopics/storyModel.js');
 
 var utils = {
 
@@ -29,10 +30,28 @@ var utils = {
 
   },
 
-  incrementCountStory: function(url) {
+  incrementStoriesCountandDate: function(stories) {
+    stories.forEach(function(item) {
+      var query = {'url': item.Url};
 
+      item.updatedAt = Date.now;
+      var data = {
+          $set: item,
+          $inc: {
+            count: 1
+          }
+      }
 
+      Story.findOneAndUpdate(query, data, {upsert: false}, function(err, story) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log('time a count updated!');
+        }
+      });
+    });
   }
 }
 
 module.exports = utils;
+

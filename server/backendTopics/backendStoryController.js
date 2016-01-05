@@ -16,19 +16,24 @@ module.exports = {
     var topic = req.query.topic;
     topic = utils.cleanTopic(topic);
 
+    // CACHE checking
+
     cache.findStoriesForTopic(topic, function(err, stories) {
       if (err) {
         return res.send(500, { error: err });
       }
       if (stories) {
+        utils.incrementStoriesCountandDate(stories);
         return res.json(stories);
       }
+
+      // end of cache, original topic search below
+
       Bing.images(topic, {
           top: 10
         }, function(err, response, bingImageResults) {
           // take all but last 3 curly braces
           var defaultImageArray = utils.cleanBingImages(bingImageResults);
-          console.log('DEFAULT IMG ARRAY', defaultImageArray);
 
           var query = {'name':topic};
           var data = {
