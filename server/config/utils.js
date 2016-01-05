@@ -1,4 +1,5 @@
 var Story = require('../backendTopics/storyModel.js');
+var moment = require('moment');
 
 var utils = {
 
@@ -31,22 +32,26 @@ var utils = {
   },
 
   incrementStoriesCountandDate: function(stories) {
+    
+    var currentTime = Date.now().getTime;
+    console.log('CURRENT TIME',currentTime)
     stories.forEach(function(item) {
-      var query = {'url': item.Url};
+      var query = {'url': item.url};
 
-      item.updatedAt = Date.now;
       var data = {
-          $set: item,
+          // $set: {
+          //   updatedAt: currentTime
+          // },
           $inc: {
             count: 1
           }
       }
 
-      Story.findOneAndUpdate(query, data, {upsert: false}, function(err, story) {
+      Story.findOneAndUpdate(query, data, {upsert: true}, function(err, story) {
         if (err) {
           console.log(err);
         } else {
-          console.log('time a count updated!');
+          console.log('time and count updated!');
         }
       });
     });

@@ -23,6 +23,7 @@ module.exports = {
         return res.send(500, { error: err });
       }
       if (stories) {
+        console.log('CACHE TRUE')
         utils.incrementStoriesCountandDate(stories);
         return res.json(stories);
       }
@@ -54,7 +55,7 @@ module.exports = {
             }
 
             Bing.news(topic, {
-              top: 12,
+              top: 2,
               newsSortBy: "Date"
             }, function(err, response, bingResults) {
 
