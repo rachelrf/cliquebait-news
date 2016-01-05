@@ -1,55 +1,56 @@
 angular.module('pique', [
   'pique.stories',
   'pique.services',
-  'shortly.auth',
+  // 'shortly.auth',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
-  	.when('/signin', {
-      templateUrl: 'app/auth/signin.html',
-      controller: 'AuthController'
-    })
-    .when('/signup', {
-      templateUrl: 'app/auth/signup.html',
-      controller: 'AuthController'
-    })
+  	// .when('/signin', {
+   //    templateUrl: 'app/auth/signin.html',
+   //    controller: 'AuthController'
+   //  })
+   //  .when('/signup', {
+   //    templateUrl: 'app/auth/signup.html',
+   //    controller: 'AuthController'
+   //  })
     .when('/', {
       templateUrl: 'app/frontendStories/stories.html',
       controller: 'StoriesController',
-      authenticate: true
+      // authenticate: true
     })
-    .when('/logout', {
-      templateUrl: 'app/auth/signin.html',
-      controller: 'AuthController'
-    })
+    // .when('/logout', {
+    //   templateUrl: 'app/auth/signin.html',
+    //   controller: 'AuthController'
+    // })
     .otherwise( {
       templateUrl: 'app/frontendStories/stories.html',
       controller: 'StoriesController',
-      authenticate: true
+      // authenticate: true
     });
 
-    $httpProvider.interceptors.push('AttachTokens');
+    // $httpProvider.interceptors.push('AttachTokens');
 
 
-}).factory('AttachTokens', function ($window) {
-  // this is an $httpInterceptor
-  // its job is to stop all out going request
-  // then look in local storage and find the user's token
-  // then add it to the header so the server can validate the request
-  var attach = {
-    request: function (object) {
-      var jwt = $window.localStorage.getItem('com.shortly');
-      if (jwt) {
-        object.headers['x-access-token'] = jwt;
-      }
-      object.headers['Allow-Control-Allow-Origin'] = '*';
-      return object;
-    }
-  };
-  return attach;
 })
-.run(function ($rootScope, $location, Auth) {
+// .factory('AttachTokens', function ($window) {
+//   // this is an $httpInterceptor
+//   // its job is to stop all out going request
+//   // then look in local storage and find the user's token
+//   // then add it to the header so the server can validate the request
+//   var attach = {
+//     request: function (object) {
+//       var jwt = $window.localStorage.getItem('com.shortly');
+//       if (jwt) {
+//         object.headers['x-access-token'] = jwt;
+//       }
+//       object.headers['Allow-Control-Allow-Origin'] = '*';
+//       return object;
+//     }
+//   };
+//   return attach;
+// })
+.run(function ($rootScope, $location) {
   // here inside the run phase of angular, our services and controllers
   // have just been registered and our app is ready
   // however, we want to make sure the user is authorized
@@ -58,8 +59,8 @@ angular.module('pique', [
   // and send that token to the server to see if it is a real user or hasn't expired
   // if it's not valid, we then redirect back to signin/signup
   $rootScope.$on('$routeChangeStart', function (evt, next, current) {
-    if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
-      $location.path('/signin');
-    }
+    // if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
+    //   $location.path('/signin');
+    // }
   });
 });

@@ -1,13 +1,13 @@
 var backendTopicController = require('../backendTopics/backendTopicController.js');
-var userController = require('../users/userController.js');
+// var userController = require('../users/userController.js');
 var backendStoryController = require('../backendTopics/backendStoryController.js');
 var backendOGImageController = require('../backendTopics/backendOGImageController.js');
 var helpers = require('./helpers.js'); // our custom middleware
 
 module.exports = function (app, express) {
-	app.post('/api/users/signin', userController.signin);
-	app.post('/api/users/signup', userController.signup);
-	app.get('/api/users/signedin', userController.checkAuth);
+	// app.post('/api/users/signin', userController.signin);
+	// app.post('/api/users/signup', userController.signup);
+	// app.get('/api/users/signedin', userController.checkAuth);
 
   // app.get('/api/url', backendTopicController.allUrls);
   app.post('/api/topic', backendTopicController.newTopic);
