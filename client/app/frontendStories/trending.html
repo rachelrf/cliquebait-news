@@ -1,0 +1,14 @@
+ <div id='containerTrending' ng-controller='TrendingController'>
+
+ 	<h2>Hot Topics: What's Trending Now</h2>
+
+ 	<div ng-repeat="topic in trending">
+ 		<a class= "story outline" ng-style= "{'background-image':'url(' + topic.images[0] + ')'}">    
+ 	    <h2>{{topic.name}}
+ 	    </h2>
+ 	    
+ 		</a>
+ 		
+ 	</div>
+
+</div>

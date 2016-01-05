@@ -77,15 +77,15 @@ var utils = {
   },
 
   returnHotTopics: function(callback) {
-    Topic.find().limit(6).sort({ updatedAt: -1 }).exec(callback);
+    Topic.find().limit(2).sort({ updatedAt: -1 }).exec(callback);
   },
 
   returnTopTopics: function(callback) {
-    Topic.find().limit(3).sort({ count: -1 }).exec(callback);
+    Topic.find().limit(2).sort({ count: -1 }).exec(callback);
   },
 
   returnTopStories: function(callback) {
-    Story.find().limit(3).sort({ count: -1 }).exec(callback);
+    Story.find().limit(2).sort({ count: -1 }).exec(callback);
   }
 }
 

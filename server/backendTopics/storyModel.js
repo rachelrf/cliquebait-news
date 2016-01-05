@@ -7,8 +7,8 @@ var StorySchema = new mongoose.Schema({
  source: String,
  count: Number,
  topic: { type: mongoose.Schema.ObjectId, ref: 'Topic' },
- createdAt: { type: Date, default: Date.now },
- updatedAt: { type: Date, default: Date.now }
+ createdAt: { type: Date, default: new Date(Date.now()) },
+ updatedAt: { type: Date, default: new Date(Date.now()) }
 });
 
 module.exports = mongoose.model('Story', StorySchema);

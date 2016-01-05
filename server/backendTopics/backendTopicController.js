@@ -1,14 +1,27 @@
-Q = require('q');
-util = require('../config/utils.js');
-google = require('google');
-
-
+var utils = require('../config/utils.js');
 
 module.exports = {
 
-  newTopic: function (req, res, next) {
-    // add new topic to the user information, or just to general site information
-    res.json({});
+  fetchTrending: function (req, res, next) {
+  	utils.returnHotTopics(function(err, trendingTopicResults) {
+  		if (err) {
+  			console.log(err);
+  		}
+  		res.json(trendingTopicResults);
+  	})
+
   }
+
+  // fetchTop: function (req, res, next) {
+  //   utils.returnTopTopics(function(err, topTopicResults) {
+  //     if (err) {
+  //       console.log(err);
+  //     }
+  //     res.json(topTopicResults);
+  //   })
+
+  // },
+
+
 
 };

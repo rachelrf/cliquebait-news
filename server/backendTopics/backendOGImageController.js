@@ -5,9 +5,9 @@ var Topic = require('./topicModel.js');
 module.exports = {
 
   fetchOGImages: function (req, res, next) {
-    
     var site = req.query.site; 
     var topicId = req.query.topic;
+
     var options = {'url': site, 'timeout':2000};
 
     ogs(options, function(err, results) {

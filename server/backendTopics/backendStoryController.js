@@ -41,7 +41,9 @@ module.exports = {
           var data = {
               $set: {
                 name: topic,
-                images: defaultImageArray
+                images: defaultImageArray,
+                defaultImage: defaultImageArray[0],
+                updatedAt: new Date(Date.now())
               },
               $inc: {
                 count: 1

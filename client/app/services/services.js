@@ -26,10 +26,34 @@ angular.module('pique.services', []).factory('Stories', function ($http) {
   };
 
 
+  var getTrending = function () {
+    return $http({
+      method: 'GET',
+      url: '/api/trending'
+    })
+    .then(function (resp) {
+      return resp.data;
+    });
+
+  }
+
+  // var getTop = function () {
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/api/top'
+  //   })
+  //   .then(function (resp) {
+  //     return resp.data;
+  //   });
+
+  // }
+
+
   return { 
     addNewTopic: addNewTopic,
     getStories: getStories,
-    
+    getTrending: getTrending,
+    // getTop: getTop
   };
 
 

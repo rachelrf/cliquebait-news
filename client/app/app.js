@@ -1,6 +1,8 @@
 angular.module('pique', [
   'pique.stories',
   'pique.services',
+  'pique.trending',
+  // 'pique.top',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
@@ -16,7 +18,16 @@ angular.module('pique', [
       controller: 'StoriesController',
       
     })
- 
+    .when('/top', {
+      templateUrl: 'app/frontendStories/top.html',
+      controller: 'TopController',
+      
+    })
+    .when('/trending', {
+      templateUrl: 'app/frontendStories/trending.html',
+      controller: 'TrendingController',
+      
+    })
     .otherwise( {
       templateUrl: 'app/frontendStories/stories.html',
       controller: 'StoriesController',
