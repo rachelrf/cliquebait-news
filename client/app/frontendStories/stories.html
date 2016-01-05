@@ -1,4 +1,4 @@
- <div id='container' ng-controller='StoriesController'>
+<div id='container' ng-controller='StoriesController'>
 
     <form ng-submit="getStories()">
       <input type="text" ng-model="input" placeholder="Enter a topic that interests you" />
@@ -6,25 +6,21 @@
     </form>
 
     <div ng-repeat="story in data.stories">
-    	<a ng-href = {{story.Url}} target="_blank">
+    	<a class= "story outline" ng-style= "{'background-image':'url(/api/getImage?site='+ story.url + '&topic=' + story.topic + ')'}" ng-href = {{story.url}} target="_blank">
 
         
-        <!-- <div class='displayImg' background-image=url("/api/getImage?site={{story.Url}}")>
-        </div> -->
-        <img class='displayImg' ng-src="/api/getImage?site={{story.Url}}"/>
-        
-        <h3> 
-            <img class='heart' ng-src='http://icons.iconarchive.com/icons/graphicloads/100-flat/256/heart-favourite-icon.png'>
-            {{story.Title}}
-        </h3>
-        <h6>{{story.Source}}</h6>
-        <!--    <iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" src={{trustSrc(story.Url)}}></iframe> -->
+            <!-- <div class='displayImg' background-image=url("/api/getImage?site={{story.Url}}")>
+            </div> -->
+            <!-- <img class='displayImg' ng-src=""/> -->
+            
+            <h3> 
+                <img class='heart' ng-src='http://icons.iconarchive.com/icons/graphicloads/100-flat/256/heart-favourite-icon.png'>
+                {{story.title}}
+            </h3>
+            <h4>{{story.source}}</h4>
         
     	</a>
-
-    	
     	
     </div>
 
-
-  </div>
+</div>

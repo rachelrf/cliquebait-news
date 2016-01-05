@@ -1,3 +1,8 @@
+
+#container {
+  margin-bottom: 24px;
+}
+
 .displayImg {
   height: 350px;
   width: 500px;
@@ -7,9 +12,31 @@
   height: 20px;
   width: 20px;
   float: left;
+  margin: 8px;
 }
 
+a.story {
+  padding: 8px;
+  color: #fff;
+  background-size: cover;
+  width: 30%;
+  height: 256px;
+  display: block;
+  float: left;
+  margin: 4px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(100, 100, 100, 0.5);
 
+  transition: all .2s ease-in-out;
+
+}
+
+a.story:hover { transform: scale(1.025); }
+
+.outline {
+  text-shadow: 0px 0px 4px #000;
+  
+}
 
 body {
   margin: 0;

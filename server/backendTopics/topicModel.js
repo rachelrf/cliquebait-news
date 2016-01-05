@@ -2,8 +2,10 @@ var mongoose = require('../config/db');
 
 var TopicSchema = new mongoose.Schema({
  name: String,
- slug: String,
- count: Number
+ images: [String],
+ count: Number,
+ createdAt: { type: Date, default: Date.now },
+ updatedAt: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('Topic', TopicSchema);
