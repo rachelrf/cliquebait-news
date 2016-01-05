@@ -2,8 +2,9 @@ var mongoose = require('mongoose');
 var crypto = require('crypto');
 
 var TopicSchema = new mongoose.Schema({
- title: String,
- url: String,
+ id: String, // search parameter
+ count: Number,
+ stories: Array // array of story objects
 });
 
 module.exports = mongoose.model('Topic', TopicSchema);
