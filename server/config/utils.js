@@ -1,4 +1,5 @@
 var Story = require('../backendTopics/storyModel.js');
+var Topic = require('../backendTopics/topicModel.js');
 var moment = require('moment');
 
 var utils = {
@@ -26,22 +27,40 @@ var utils = {
     return str.toLowerCase().replace(/\s\s+/g, ' ');
   },
 
-  incrementCountTopic: function(name) {
+  incrementTopicCountandDate: function(topic) {
+    var currentTime = new Date(Date.now());
+    var query = {'name': topic};
 
+    var data = {
+        $set: {
+          updatedAt: currentTime
+        },
+        $inc: {
+          count: 1
+        }
+    }
+
+    Topic.findOneAndUpdate(query, data, {upsert: true}, function(err, topic) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('time and count updated!');
+      }
+    });
 
   },
 
   incrementStoriesCountandDate: function(stories) {
     
-    var currentTime = Date.now().getTime;
-    console.log('CURRENT TIME',currentTime)
+    var currentTime = new Date(Date.now());
+    
     stories.forEach(function(item) {
       var query = {'url': item.url};
 
       var data = {
-          // $set: {
-          //   updatedAt: currentTime
-          // },
+          $set: {
+            updatedAt: currentTime
+          },
           $inc: {
             count: 1
           }
@@ -55,8 +74,21 @@ var utils = {
         }
       });
     });
+  },
+
+  returnHotTopics: function(callback) {
+    Topic.find().limit(6).sort({ updatedAt: -1 }).exec(callback);
+  },
+
+  returnTopTopics: function(callback) {
+    Topic.find().limit(3).sort({ count: -1 }).exec(callback);
+  },
+
+  returnTopStories: function(callback) {
+    Story.find().limit(3).sort({ count: -1 }).exec(callback);
   }
 }
 
 module.exports = utils;
+
 

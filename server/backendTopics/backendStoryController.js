@@ -24,6 +24,7 @@ module.exports = {
       }
       if (stories) {
         console.log('CACHE TRUE')
+        utils.incrementTopicCountandDate(topic)
         utils.incrementStoriesCountandDate(stories);
         return res.json(stories);
       }
