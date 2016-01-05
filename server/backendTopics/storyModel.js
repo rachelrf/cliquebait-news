@@ -1,9 +1,12 @@
-var mongoose = require('mongoose');
-var crypto = require('crypto');
+var mongoose = require('../config/db');
 
-var TopicSchema = new mongoose.Schema({
- id: String, // url
- count: Number
+var StorySchema = new mongoose.Schema({
+ url: String,
+ title: String,
+ description: String,
+ source: String,
+ count: Number,
+ topic: { type: mongoose.Schema.ObjectId, ref: 'Topic' }
 });
 
 module.exports = mongoose.model('Story', StorySchema);

@@ -15,8 +15,9 @@ module.exports = {
 
         var newUrl = 'http://wac.450f.edgecastcdn.net/80450F/hudsonvalleycountry.com/files/2015/01/cat4.jpg';
         var regex = /\.(jpg|gif|png)$/;
-        // 
-        if (results.data.ogImage.url && regex.test(results.data.ogImage.url) ) {
+        
+
+        if (results.data && results.data.ogImage && results.data.ogImage.url && regex.test(results.data.ogImage.url) ) {
             newUrl = results.data.ogImage.url;
         }
     

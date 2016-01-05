@@ -1,10 +1,9 @@
-var mongoose = require('mongoose');
-var crypto = require('crypto');
+var mongoose = require('../config/db');
 
 var TopicSchema = new mongoose.Schema({
- id: String, // search parameter
- count: Number,
- stories: Array // array of story objects
+ name: String,
+ slug: String,
+ count: Number
 });
 
 module.exports = mongoose.model('Topic', TopicSchema);
