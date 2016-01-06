@@ -7,4 +7,8 @@ angular.module('pique.stories', [])
 	    $scope.data.stories = data;
     });
   };
+
+  $scope.clickStory = function(url) {
+  	Stories.updateStoryCount(url);
+  }
 });

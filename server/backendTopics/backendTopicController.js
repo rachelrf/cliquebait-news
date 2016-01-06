@@ -23,7 +23,6 @@ module.exports = {
   },
 
   fetchTopStories: function (req, res, next) {
-    console.log('GOT TO FETCHTOPSTORIES')
     utils.returnTopStories(function(err, topStoriesResults) {
       if (err) {
         console.log(err);
@@ -31,6 +30,6 @@ module.exports = {
       res.json(topStoriesResults);
     })
 
-  },
+  }
 
 };

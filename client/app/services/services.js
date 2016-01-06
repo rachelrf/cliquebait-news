@@ -60,13 +60,22 @@ angular.module('pique.services', []).factory('Stories', function ($http) {
 
   }
 
+  var updateStoryCount = function (url) {
+    // console.log('got to getTopStories')
+    return $http({
+      method: 'GET',
+      url: '/api/updateStoryCount?story=' + url
+    });
+
+  }
+
 
   return { 
     addNewTopic: addNewTopic,
     getStories: getStories,
     getTrending: getTrending,
     getTop: getTop,
-    getTopStories: getTopStories
+    updateStoryCount: updateStoryCount
   };
 
 

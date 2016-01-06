@@ -5,8 +5,8 @@
       <input type="submit" value="submit" />
     </form>
 
-    <div ng-repeat="story in data.stories">
-    	<a class= "story outline" ng-style= "{'background-image':'url(/api/getImage?site='+ story.url + '&topic=' + story.topic + ')'}" ng-href = {{story.url}} target="_blank">
+    <div ng-repeat="story in data.stories"  >
+    	<a ng-click="clickStory(story.url)" class= "story outline" ng-style= "{'background-image':'url(/api/getImage?site='+ story.url + '&topic=' + story.topic + ')'}" ng-href = {{story.url}} target="_blank">
 
         
             <!-- <div class='displayImg' background-image=url("/api/getImage?site={{story.Url}}")>

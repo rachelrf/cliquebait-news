@@ -8,6 +8,24 @@ var utils = require('../config/utils.js');
 
 
 module.exports = {
+  updateStoryCount: function(req, res, next) {
+    var storyUrl = req.query.story;
+
+    var query = {'url': storyUrl};
+    var data = {
+      $inc: {
+        count: 1
+      }
+    };
+
+    Story.findOneAndUpdate(query, data, {upsert:true, 'new': true}, function(err, story){
+      if (err) {
+        console.log(err);
+        return res.send(500, { error: err });
+      }
+    });
+
+  },
 
   fetchStories: function (req, res, next) {
 
