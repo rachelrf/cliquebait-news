@@ -18,7 +18,7 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
-  Pique.
+  CliqueBait.
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
@@ -26,7 +26,7 @@ Once the project moves into development, the press release can be used as a touc
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-   Pique filters the news for readers who care more about topics than sources. 
+   CliqueBait filters the news for readers who care more about topics than sources. 
 
 ## Problem ##
   > Describe the problem your product solves.
@@ -34,20 +34,20 @@ Once the project moves into development, the press release can be used as a touc
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
-  With Pique, readers can simply enter a topic of interest and see list of relevant news articles. With a Pique account, readers can store multiple topics of interest for a completely individualized news experience, and look at Trending Topics to see what other Pique users are interested in.
+  With CliqueBait, readers can simply enter a topic of interest and see list of relevant news articles. Readers can also looks at most-searched topics, most-clicked articles, and trending topics.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
-  TODO
+  'Whether you read The Wall Street Journal or Buzzfeed, CliqueBait had the content to keep you clicking.'
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
-  TODO
+  Go to https://cliquebait.herokuapp.com/#/ and see what everyone is talking about!
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-  TODO
+  'I read it with my morning coffee, my afternoon diet coke, and my evening vodka redbull, in between browsing Pinterest and stalking my ex on Facebook.' -- Verity Jones
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
-  TODO
+  Read about the topics you care about at cliquebait.herokuapp.com.
