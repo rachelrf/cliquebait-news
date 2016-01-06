@@ -76,7 +76,7 @@ module.exports = {
             }
 
             Bing.news(topic, {
-              top: 2,
+              top: 12,
               newsSortBy: "Date"
             }, function(err, response, bingResults) {
 

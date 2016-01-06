@@ -75,6 +75,7 @@ angular.module('pique.services', []).factory('Stories', function ($http) {
     getStories: getStories,
     getTrending: getTrending,
     getTop: getTop,
+    getTopStories: getTopStories,
     updateStoryCount: updateStoryCount
   };
 
