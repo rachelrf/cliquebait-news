@@ -2,7 +2,7 @@ angular.module('pique', [
   'pique.stories',
   'pique.services',
   'pique.trending',
-  // 'pique.top',
+  'pique.top',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
