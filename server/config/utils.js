@@ -89,7 +89,7 @@ var utils = {
   },
 
   updateStoryCount: function(url) {
-    
+
   }
 }
 
