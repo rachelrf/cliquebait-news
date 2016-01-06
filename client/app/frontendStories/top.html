@@ -3,11 +3,20 @@
  	<h2>Popular Topics</h2>
  	<div ng-repeat="topic in top">
  		<a class= "story outline" ng-style= "{'background-image':'url(' + topic.images[0] + ')'}">    
- 	    <h2>{{topic.name}}
- 	    </h2>
+ 	    <h2>{{topic.name}}</h2>
  	    
  		</a>
  		
  	</div>
+ 	
  	<h2>Popular Articles</h2>
+ 	<div ng-repeat="story in topStories">
+ 		<!-- <a class= "story outline" ng-style= "{'background-image':'url(' + story.url + ')'}">   -->
+ 		<a class= "story outline" ng-style= "{'background-image':'url(/api/getImage?site='+ story.url + '&topic=' + story.topic + ')'}" ng-href = {{story.url}} target="_blank">  
+ 	    <h2>{{story.title}}</h2>
+ 	    
+ 		</a>
+ 		
+ 	</div>
+
 </div>

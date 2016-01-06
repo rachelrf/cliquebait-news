@@ -9,5 +9,17 @@ angular.module('pique.top', [])
     	})
     }
 
+    $scope.topStories = {};
+
+    $scope.getTopStories = function() {
+    	Stories.getTopStories()
+    	.then( function(data) {
+    		console.log(data)
+    		$scope.topStories = data;
+    	})
+    }
+
     $scope.getTop();
+    $scope.getTopStories();
+
 });

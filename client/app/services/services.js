@@ -38,10 +38,21 @@ angular.module('pique.services', []).factory('Stories', function ($http) {
   }
 
   var getTop = function () {
-    console.log('got to getTop')
     return $http({
       method: 'GET',
       url: '/api/top'
+    })
+    .then(function (resp) {
+      return resp.data;
+    });
+
+  }
+
+  var getTopStories = function () {
+    // console.log('got to getTopStories')
+    return $http({
+      method: 'GET',
+      url: '/api/topStories'
     })
     .then(function (resp) {
       return resp.data;
@@ -54,7 +65,8 @@ angular.module('pique.services', []).factory('Stories', function ($http) {
     addNewTopic: addNewTopic,
     getStories: getStories,
     getTrending: getTrending,
-    getTop: getTop
+    getTop: getTop,
+    getTopStories: getTopStories
   };
 
 
