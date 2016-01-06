@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "test": "gulp karma",
-    "start": "gulp",
+    "start": "node server/server.js",
     "lint": "jscs ./"
   },
   "pre-commit": "lint",
