@@ -5,7 +5,6 @@ angular.module('pique.trending', [])
     $scope.getTrending = function() {
     	Stories.getTrending()
     	.then( function(data) {
-    		console.log('trending returned', data)
     		$scope.trending = data;
     	})
     }

@@ -10,17 +10,18 @@ module.exports = {
   		res.json(trendingTopicResults);
   	})
 
-  }
+  },
 
-  // fetchTop: function (req, res, next) {
-  //   utils.returnTopTopics(function(err, topTopicResults) {
-  //     if (err) {
-  //       console.log(err);
-  //     }
-  //     res.json(topTopicResults);
-  //   })
+  fetchTop: function (req, res, next) {
+    console.log('GOT TO FETCHTOP')
+    utils.returnTopTopics(function(err, topTopicResults) {
+      if (err) {
+        console.log(err);
+      }
+      res.json(topTopicResults);
+    })
 
-  // },
+  },
 
 
 
